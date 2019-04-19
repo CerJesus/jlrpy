@@ -19,7 +19,6 @@ ch.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
 logger.addHandler(ch)
 logger.propagate = False
 
-
 class Connection(object):
     """Connection to the JLR Remote Car API"""
 
@@ -187,7 +186,7 @@ class Vehicle(dict):
 
         if key:
             return {d['key']: d['value'] for d in result['vehicleStatus']}[key]
-            
+
         return result
 
     def get_health_status(self):
